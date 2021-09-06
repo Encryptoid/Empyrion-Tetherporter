@@ -10,7 +10,7 @@ namespace Tetherporter
     interface IDatabaseManager
     {
         void SaveTetherportRecord(TetherporterRecord record);
-        TetherporterRecord LoadTetherporterRecord(string steamId);
+        bool LoadTetherporterRecord(string steamId, out TetherporterRecord record);
         bool LoadPortal(out PortalRecord portal);
     }
 
@@ -51,15 +51,18 @@ namespace Tetherporter
             return portal != null;
         }
 
-        public TetherporterRecord LoadTetherporterRecord(string steamId)
+        public bool LoadTetherporterRecord(string steamId, out TetherporterRecord record)
         {
+            record = null;
             var path = FormatFilePath(steamId);
 
             _log($"Loading record from: {path}");
 
             using (var stream = new StreamReader(path))
                 using (var csv = new CsvReader(stream, CultureInfo.InvariantCulture))
-                    return csv.GetRecords<TetherporterRecord>().Single();                    
+                    record =  csv.GetRecords<TetherporterRecord>().Single();
+
+            return record != null;
         }
 
         private string FormatFilePath(string steamId)
