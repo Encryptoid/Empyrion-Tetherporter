@@ -63,6 +63,7 @@ namespace Tetherporter
             {
                 Log($"Entity {player.entityId}/{player.playerName} requester Untether but no tether was found.");
                 await MessagePlayer(player.entityId, $"No tether was found.", 5, MessagerPriority.Red);
+                return;
             }
 
             await TeleportPlayer(player.entityId, record.Playfield, record.PosX, record.PosY, record.PosZ, record.RotX, record.RotY, record.RotZ);
