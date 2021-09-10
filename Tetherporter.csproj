@@ -32,13 +32,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CsvHelper, Version=27.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
-      <HintPath>packages\CsvHelper.27.1.1\lib\net47\CsvHelper.dll</HintPath>
+      <HintPath>packages\CsvHelper.27.0.2\lib\net47\CsvHelper.dll</HintPath>
     </Reference>
     <Reference Include="EmpyrionModdingFramework">
       <HintPath>..\..\forked-zucchini\zucchini-empyrion\modding-framework\EmpyrionModdingFramework\bin\Debug\EmpyrionModdingFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\EmpyrionModdingFramework\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.HashCode.1.1.0\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
     </Reference>
     <Reference Include="Mif">
       <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Empyrion - Dedicated Server\DedicatedServer\EmpyrionDedicated_Data\Managed\Mif.dll</HintPath>
@@ -53,6 +57,7 @@
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\EmpyrionModdingFramework\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\EmpyrionModdingFramework\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
@@ -75,10 +80,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TetherporterRecord.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Database\" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Database\portal.tether">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Database\tetherporter.dbpath">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Tetherporter_Info.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

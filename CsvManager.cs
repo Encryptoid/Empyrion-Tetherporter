@@ -28,7 +28,7 @@ namespace Tetherporter
         {
             var path = FormatFilePath(record.SteamId);
 
-            _log($"Logging record [[{record}]] to path {path}");
+            _log($"Logging Tetherporter record [[{record}]] to path {path}");
 
             using(var stream = new StreamWriter(path))
                 using(var csv = new CsvWriter(stream, CultureInfo.InvariantCulture))
@@ -40,6 +40,8 @@ namespace Tetherporter
         {
             portal = null;
             var path = FormatPortalPath();
+
+            _log($"Attempting loading portal record from path: {path}");
 
             if (!File.Exists(path))
                 return false;

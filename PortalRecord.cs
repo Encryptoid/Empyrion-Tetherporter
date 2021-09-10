@@ -16,5 +16,6 @@ namespace Tetherporter
         public float RotX { get; set; }
         public float RotY { get; set; }
         public float RotZ { get; set; }
+        public string EventName { get; set; }
     }
 }
