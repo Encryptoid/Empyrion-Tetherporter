@@ -27,7 +27,7 @@ This will return the player to their saved location, and delete their tether rec
 **Currently portal names should not include spaces. Quotes are not required.**
 
 # !portal-create "PortalName"
-This will create a portal record in portal.tether.
+This will create a portal record in portal.tether at the admins current location
 
 # !portal-admin "PortalName"
 This will flip the AdminYN value of the portal, allowing non-admins to see and access it.
