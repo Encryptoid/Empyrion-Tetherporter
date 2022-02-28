@@ -34,6 +34,7 @@ namespace Tetherporter
             CommandManager.CommandList.Add(new ChatCommand("tetherport", ListPortals));
             CommandManager.CommandList.Add(new ChatCommand("ttp", ListPortals)); //short hand
             CommandManager.CommandList.Add(new ChatCommand("untether", Untether));
+            CommandManager.CommandList.Add(new ChatCommand("uttp", Untether)); //short hand
 
             //Admin Only
             CommandManager.CommandList.Add(new ChatCommand(PortalCreateCommand, CreatePortal, PlayerPermission.Admin, 1));
